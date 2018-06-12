@@ -15,7 +15,7 @@
     <!--app:layout_constraintVertical_bias="0.0" />-->
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="360dp"
@@ -26,7 +26,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline5" />
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
@@ -58,11 +60,26 @@
 
         android:layout_marginTop="8dp"
         android:text="Find your song now"
+        android:textSize="10pt"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.071"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="256dp"
+        android:text="search"
+        android:background="#32353A"
+        android:textColor="#DBD8D8"
+        android:
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!--app:layout_constraintBottom_toTopOf="parent"-->
     <!--app:layout_constraintEnd_toStartOf="parent"-->

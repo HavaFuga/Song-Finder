@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
         actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
+        actionBar.setIcon(@drawable/herz_weiss.svg);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+       // getSupportActionBar().setIcon(res.drawable.herz_weiss.svg);
     }
 
 }

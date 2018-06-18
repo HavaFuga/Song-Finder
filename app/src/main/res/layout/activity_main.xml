@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="367dp" />
+        app:layout_constraintGuide_end="17dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guidelineLeft16"
@@ -58,18 +58,21 @@
         android:layout_width="206dp"
 
         android:layout_height="wrap_content"
-        android:layout_marginBottom="276dp"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineRight25"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeft75"
-
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_search"
         android:text="search"
         android:textColor="#DBD8D8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-         />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight25"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft75"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guidelineRight25"
@@ -93,10 +96,10 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/enter_lyrics"
         android:ems="10"
-        android:hint="enter Lyrics here..."
+        android:hint=" enter Lyrics here..."
         android:inputType="textMultiLine"
         android:visibility="visible"
-        android:height="50px"
+        android:height="300px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight16"
         app:layout_constraintHorizontal_bias="1.0"
@@ -104,6 +107,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.229" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fABtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight16"
+        app:srcCompat="@drawable/floatbutton" />
 
 
 </android.support.constraint.ConstraintLayout>

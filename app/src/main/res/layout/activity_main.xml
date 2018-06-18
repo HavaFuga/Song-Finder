@@ -54,7 +54,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSearch"
         android:layout_width="206dp"
 
         android:layout_height="wrap_content"

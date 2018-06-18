@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Favorits"
-           
+            android:name=".Favorits"/>
+
         <activity
             android:name=".singleview"
             android:parentActivityName=".list" />

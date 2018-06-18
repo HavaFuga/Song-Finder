@@ -1,19 +1,13 @@
 package ch.bbcag.songfinder;
 
-import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class Favorits extends AppCompatActivity {
+public class list extends AppCompatActivity {
 
-    ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorits);
+        setContentView(R.layout.activity_list);
     }
-
-
-
-
 }

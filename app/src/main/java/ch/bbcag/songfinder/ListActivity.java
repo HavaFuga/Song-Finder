@@ -50,4 +50,12 @@ public class ListActivity extends AppCompatActivity {
             }
         });
     }
+    public void fill() throws MusixMatchException {
+        String someTrackLyrics = "Lose yourself";
+
+
+        new SongInformationLoader().execute(someTrackLyrics);
+
+
+    }
 }

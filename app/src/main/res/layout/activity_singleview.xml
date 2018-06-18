@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Favorits">
-
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/favorites"
+            android:icon="@drawable/heart_red"
+            android:showAsAction="always"
+            android:title="heart_fav"/>
+    </menu>
     <ProgressBar
         android:id="@+id/loading_badi_details_progress"
         android:layout_width="50dp"

@@ -1,10 +1,15 @@
 package ch.bbcag.songfinder;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.jmusixmatch.MusixMatchException;
@@ -24,13 +29,25 @@ public class ListActivity extends AppCompatActivity {
         } catch (MusixMatchException e) {
             e.printStackTrace();
         }
-    }
-    public void fill() throws MusixMatchException {
-        String someTrackLyrics = "Lose yourself";
 
-
-        new SongInformationLoader().execute(someTrackLyrics);
-
-
+        //Icon in ActionBar
+        aBlist.setDisplayOptions(aBlist.getDisplayOptions()
+                | ActionBar.DISPLAY_SHOW_CUSTOM);
+        ImageView imageView = new ImageView(aBlist.getThemedContext());
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.heart_white);
+        ActionBar.LayoutParams layoutParams = new ActionBar.LayoutParams(
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ActionBar.LayoutParams.WRAP_CONTENT, Gravity.RIGHT
+                | Gravity.CENTER_VERTICAL);
+        layoutParams.rightMargin = 40;
+        imageView.setLayoutParams(layoutParams);
+        aBlist.setCustomView(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ListActivity.this, Favorits.class));
+            }
+        });
     }
 }

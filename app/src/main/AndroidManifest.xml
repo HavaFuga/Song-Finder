@@ -16,8 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Favorits" />
-        <activity android:name=".singleview"></activity>
+        <activity
+            android:name=".Favorits"
+           
+        <activity
+            android:name=".singleview"
+            android:parentActivityName=".list" />
+        <activity
+            android:name=".list"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

@@ -15,6 +15,6 @@ public class singleview extends AppCompatActivity {
         setContentView(R.layout.activity_singleview);
         ActionBar aBsingleView = getSupportActionBar();
         aBsingleView.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
-        aBsingleView.setTitle();
+       // aBsingleView.setTitle();
     }
 }

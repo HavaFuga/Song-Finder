@@ -14,6 +14,9 @@ public class Favorits extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         actionBar = getSupportActionBar();
         actionBar.setTitle("Favoriten");
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
+
+        ;
     }
 
 

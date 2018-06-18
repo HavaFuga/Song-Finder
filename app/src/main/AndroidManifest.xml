@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ch.bbcag.songfinder">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,9 +23,9 @@
 
         <activity
             android:name=".singleview"
-            android:parentActivityName=".list" />
+            android:parentActivityName=".ListActivity" />
         <activity
-            android:name=".list"
+            android:name=".ListActivity"
             android:parentActivityName=".MainActivity"/>
     </application>
 

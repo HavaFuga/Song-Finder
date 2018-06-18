@@ -12,11 +12,10 @@ public class Favorits extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_favorits);
         actionBar = getSupportActionBar();
         actionBar.setTitle("Favoriten");
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
-
-        ;
     }
 
 

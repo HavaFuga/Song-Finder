@@ -13,7 +13,9 @@ public class Favorits extends AppCompatActivity {
         setContentView(R.layout.activity_favorits);
     }
 
-
+    //MusixMatch
+    String apiKey = "55615c98103f6c50e31c0904312eeafa";
+    //MusixMatch musixMatch = new MusixMatch(apiKey); Fehler
 
 
 }

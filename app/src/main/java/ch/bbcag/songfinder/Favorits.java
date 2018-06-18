@@ -1,9 +1,8 @@
 package ch.bbcag.songfinder;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
 
 public class Favorits extends AppCompatActivity {
 
@@ -13,6 +12,10 @@ public class Favorits extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorits);
     }
+
+    //MusixMatch
+    String apiKey = "55615c98103f6c50e31c0904312eeafa";
+    //MusixMatch musixMatch = new MusixMatch(apiKey); Fehler
 
 
 }

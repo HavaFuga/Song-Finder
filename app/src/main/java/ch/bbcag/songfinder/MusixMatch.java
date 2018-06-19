@@ -22,6 +22,7 @@ import org.jmusixmatch.snippet.get.SnippetGetMessage;
 import org.jmusixmatch.subtitle.Subtitle;
 import org.jmusixmatch.subtitle.get.SubtitleGetMessage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,7 +44,7 @@ public class MusixMatch {
      *             if any error occur
      */
     public List<Track> searchTracksByLyrics(String q, boolean f_has_lyrics) throws MusixMatchException {
-        List<Track> trackList = null;
+        List<Track> trackList = new ArrayList<Track>();
 
         Map<String, Object> params = new HashMap<String, Object>();
 

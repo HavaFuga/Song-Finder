@@ -26,8 +26,9 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
     public List<Track> doInBackground(String... strings) {
         String apiKey = "55615c98103f6c50e31c0904312eeafa";
         MusixMatch musixMatch = new MusixMatch(apiKey);
+        ArrayList<TrackObject> foundTracks = new ArrayList<TrackObject>();
 
-        List<Track> tracks = null;
+        List<Track> tracks = new ArrayList<>();
 
         try {
             tracks =  musixMatch.searchTracksByLyrics(strings[0], true);
@@ -47,9 +48,9 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
                 e.printStackTrace();
             }
             TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics);
-            List<TrackObject> foundTracks = new ArrayList<TrackObject>();
             foundTracks.add(currentTrack);
         }
+
         return tracks;
     }
 
@@ -57,24 +58,7 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
     protected void onPostExecute(List<Track> foundTracks) {
         MusixMatch mm = new MusixMatch(api);
 
-        /*for (Track track : foundTracks) {
-
-
-            int trackId = track.getTrack().getTrackId();
-            String trackName = track.getTrack().getTrackName();
-            String artistName = track.getTrack().getArtistName();
-
-            Lyrics lyrics = null;
-            try {
-                lyrics = mm.getLyrics(trackId);
-            } catch (MusixMatchException e) {
-                e.printStackTrace();
-            }
-            TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics);
-            arrayAdapter.add(currentTrack);
-
-        }*/
-arrayAdapter.add((TrackObject) foundTracks);
-         arrayAdapter.notifyDataSetChanged();
+        arrayAdapter.add((TrackObject) foundTracks);
+        arrayAdapter.notifyDataSetChanged();
     }
 }

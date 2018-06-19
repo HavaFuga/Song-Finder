@@ -55,14 +55,7 @@ public class MusixMatch {
         } else {
             params.put(Constants.F_HAS_LYRICS, "0");
         }
-/*
-        try {
-            trackList = (List<Track>) getTrackResponse(Methods.TRACK_GET, params);
-        } catch (MusixMatchException e) {
-            e.printStackTrace();
-        }
 
-        return (List<Track>) trackList;*/
 
         String response = null;
         Gson gson = new Gson();

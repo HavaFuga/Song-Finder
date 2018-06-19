@@ -17,7 +17,7 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
         List<Track> tracks = null;
 
         try {
-            tracks = (List<Track>) musixMatch.searchTracksByLyrics(strings[0], true);
+            tracks =  musixMatch.searchTracksByLyrics(strings[0], true);
         } catch (MusixMatchException e) {
             e.printStackTrace();
         }
@@ -32,6 +32,6 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
         //     System.out.println("Album Name : " + data.getAlbumName());
         //   System.out.println("Artist ID : "  + data.getArtistId());
         // System.out.println("Album Name : " + data.getArtistName());
-        //System.out.println("Track ID : "   + data.getTrackId());
+        //System.out.println("TrackObject ID : "   + data.getTrackId());
     }
 }

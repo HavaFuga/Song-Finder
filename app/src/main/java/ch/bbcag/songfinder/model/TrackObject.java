@@ -1,12 +1,14 @@
 package ch.bbcag.songfinder.model;
 
-public class Track {
+import org.jmusixmatch.entity.lyrics.Lyrics;
+
+public class TrackObject {
     int trackId;
     String trackName;
     String artistName;
-    String trackLyrics;
+    Lyrics trackLyrics;
 
-    public Track(int trackId, String trackName, String artistName, String trackLyrics){
+    public TrackObject(int trackId, String trackName, String artistName, Lyrics trackLyrics){
         this.trackId = trackId;
         this.trackName = trackName;
         this.artistName = artistName;

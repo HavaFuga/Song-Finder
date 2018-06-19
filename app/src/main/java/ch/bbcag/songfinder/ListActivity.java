@@ -14,11 +14,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.jmusixmatch.MusixMatchException;
+import org.jmusixmatch.entity.lyrics.Lyrics;
 import org.jmusixmatch.entity.track.Track;
 
 import java.util.List;
 
+import ch.bbcag.songfinder.model.TrackObject;
+
+
 public class ListActivity extends AppCompatActivity {
+    String api = "55615c98103f6c50e31c0904312eeafa";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class ListActivity extends AppCompatActivity {
         aBlist.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
         aBlist.setTitle("Vorschläge");
         TextView tv = (TextView) findViewById(R.id.textView2);
+
         try {
             this.fill();
         } catch (MusixMatchException e) {
@@ -54,21 +60,41 @@ public class ListActivity extends AppCompatActivity {
             }
         });
     }
+
     public void fill() throws MusixMatchException {
         String someTrackLyrics = "mom's spaghetti";
+        List<TrackObject> trackObjects = null;
         SongInformationLoader sil = new SongInformationLoader();
+        MusixMatch mm = new MusixMatch(api);
+        ListView lvSearch = findViewById(R.id.lv_search);
+
 
         List<Track> tracks = (List<Track>) sil.execute(someTrackLyrics);
 
-        ListView lvSearch = findViewById(R.id.lv_search);
-        ArrayAdapter<Track> trackArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1);
-       for(Track track : tracks) {
-          Track jsonTrackObj = track;
-          Track trackString =  JsonTrack.createTrackFromJsonString(jsonTrackObj);
+
+        for (Track track : tracks) {
+
+
+            int trackId = track.getTrack().getTrackId();
+            String trackName = track.getTrack().getTrackName();
+            String artistName = track.getTrack().getArtistName();
+
+            Lyrics lyrics = mm.getLyrics(trackId);
+            TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics);
+            trackObjects.add(currentTrack);
+
         }
+        
+        //Fill ListView
+        ArrayAdapter<TrackObject> arrayAdapter = new ArrayAdapter<TrackObject>(
+                this,
+                android.R.layout.simple_list_item_1,
+                trackObjects);
+
+        lvSearch.setAdapter(arrayAdapter);
+
+
     }
 
-
-        
 
 }

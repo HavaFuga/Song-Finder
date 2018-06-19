@@ -1,4 +1,7 @@
-<<<<<<< HEAD
+import java.util.List;
+
+import ch.bbcag.songfinder.model.TrackObject;
+
 ///*package ch.bbcag.songfinder.model;
 //
 //import java.util.List;
@@ -14,12 +17,12 @@
 //    }
 //
 //    public void fillListView(List<TrackObject> favorites){
-//<<<<<<< HEAD
+
 //        ListView favorit_tracks = findViewById(R.id.favorit_tracks);
 //
 //        ArrayAdapter<TrackObject> listAdapter;
 //        listAdapter = new ArrayAdapter<FavoritTrack>(this, R.layout.activity_favorits, favorites);
-//=======
+
 //        /*
 //        ListView listView_ft = findfViewById(R.id.favorit_tracks);
 //
@@ -29,16 +32,14 @@
 //                trackObjects);
 //
 //        lvSearch.setAdapter(arrayAdapter);
-//>>>>>>> 8b58b5418e480aba9d111616962c90d83ea3e328
+
 //
 //        // Assign adapter to ListView
 //        favorit_tracks.setAdapter( listAdapter );*/
 //    }
 //}*/
-=======
-package ch.bbcag.songfinder.model;
 
-import java.util.List;
+        package ch.bbcag.songfinder.model;
 
 public class FavoritTrack {
     List<TrackObject> favorites = null;
@@ -65,4 +66,3 @@ public class FavoritTrack {
         favorit_tracks.setAdapter( listAdapter );*/
     }
 }
->>>>>>> 1cc78ef8cf665fe4f0ff2615bcf69223288f91be

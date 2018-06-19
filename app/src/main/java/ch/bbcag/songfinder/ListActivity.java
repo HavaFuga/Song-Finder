@@ -62,9 +62,10 @@ public class ListActivity extends AppCompatActivity {
 
         ListView lvSearch = findViewById(R.id.lv_search);
         ArrayAdapter<Track> trackArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1);
-      //  for(Track track : tracks) {
-        //    track.
-        //}
+       for(Track track : tracks) {
+          Track jsonTrackObj = track;
+          Track trackString =  JsonTrack.createTrackFromJsonString(jsonTrackObj);
+        }
     }
 
 

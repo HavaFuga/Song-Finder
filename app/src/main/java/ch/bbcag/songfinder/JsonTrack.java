@@ -7,6 +7,11 @@ import ch.bbcag.songfinder.model.Track;
 
 public class JsonTrack {
 
+    public JsonTrack(Track jsonTrackObj) {
+    }
+
+
+
     public static Track createTrackFromJsonString(String trackJsonString) throws
             JSONException {
         JSONObject jsonObj = new JSONObject(trackJsonString);
@@ -15,8 +20,8 @@ public class JsonTrack {
         String trackName = jsonObj.getString("trackName");
         String artistName = jsonObj.getString("artistName");
         String trackLyrics = jsonObj.getString("trackLyrics");
-        Track tracky = new Track(trackId, trackName, artistName, trackLyrics);
-        return tracky;
+        Track track = new Track(trackId, trackName, artistName, trackLyrics);
+        return track;
     }
 
 }

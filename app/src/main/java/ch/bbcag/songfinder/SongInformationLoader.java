@@ -29,8 +29,8 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
         // TrackData data = track.getTrack();
 
         // System.out.println("AlbumID : "    + data.getAlbumId());
-        //System.out.println("Album Name : " + data.getAlbumName());
-        // System.out.println("Artist ID : "  + data.getArtistId());
+        //     System.out.println("Album Name : " + data.getAlbumName());
+        //   System.out.println("Artist ID : "  + data.getArtistId());
         // System.out.println("Album Name : " + data.getArtistName());
         //System.out.println("Track ID : "   + data.getTrackId());
     }

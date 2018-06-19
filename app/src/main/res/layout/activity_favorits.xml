@@ -8,7 +8,7 @@
     tools:context=".Favorits">
 
     <ProgressBar
-        android:id="@+id/loading_badi_details_progress"
+        android:id="@+id/loading_track_details_progress"
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"

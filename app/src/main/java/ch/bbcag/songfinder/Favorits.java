@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 public class Favorits extends AppCompatActivity {
 
@@ -40,6 +41,9 @@ public class Favorits extends AppCompatActivity {
                 startActivity(new Intent(Favorits.this, Favorits.class));
             }
         });
+
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.loading_track_details_progress);
+        progressBar.getIndeterminateDrawable().setColorFilter(0xFF9A0000, android.graphics.PorterDuff.Mode.MULTIPLY);
     }
 
 

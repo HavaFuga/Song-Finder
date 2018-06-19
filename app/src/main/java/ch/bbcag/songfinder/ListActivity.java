@@ -11,12 +11,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import org.jmusixmatch.MusixMatchException;
-import org.jmusixmatch.entity.lyrics.Lyrics;
-import org.jmusixmatch.entity.track.Track;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ch.bbcag.songfinder.model.TrackObject;
@@ -32,7 +30,7 @@ public class ListActivity extends AppCompatActivity {
         ActionBar aBlist = getSupportActionBar();
         aBlist.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
         aBlist.setTitle("Vorschläge");
-        TextView tv = (TextView) findViewById(R.id.textView2);
+       // TextView tv = (TextView) findViewById(R.id.textView2);
 
         try {
             this.fill();
@@ -63,38 +61,19 @@ public class ListActivity extends AppCompatActivity {
 
     public void fill() throws MusixMatchException {
         String someTrackLyrics = "mom's spaghetti";
-        List<TrackObject> trackObjects = null;
-        SongInformationLoader sil = new SongInformationLoader();
-        MusixMatch mm = new MusixMatch(api);
+        List<TrackObject> trackObjects = new ArrayList<>();
+
+        // MusixMatch mm = new MusixMatch(api);
         ListView lvSearch = findViewById(R.id.lv_search);
-
-
-        List<Track> tracks = (List<Track>) sil.execute(someTrackLyrics);
-
-
-        for (Track track : tracks) {
-
-
-            int trackId = track.getTrack().getTrackId();
-            String trackName = track.getTrack().getTrackName();
-            String artistName = track.getTrack().getArtistName();
-
-            Lyrics lyrics = mm.getLyrics(trackId);
-            TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics);
-            trackObjects.add(currentTrack);
-
-        }
-        
-        //Fill ListView
-        ArrayAdapter<TrackObject> arrayAdapter = new ArrayAdapter<TrackObject>(
-                this,
-                android.R.layout.simple_list_item_1,
-                trackObjects);
-
+        ArrayAdapter<TrackObject> arrayAdapter = new ArrayAdapter<TrackObject>(this, android.R.layout.simple_list_item_1, trackObjects);
+        SongInformationLoader sil = new SongInformationLoader(arrayAdapter);
+        sil.execute(someTrackLyrics);
         lvSearch.setAdapter(arrayAdapter);
-
 
     }
 
 
 }
+
+
+

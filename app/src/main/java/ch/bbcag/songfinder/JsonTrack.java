@@ -1,8 +1,9 @@
 package ch.bbcag.songfinder;
 
-import org.jmusixmatch.entity.track.Track;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import ch.bbcag.songfinder.model.Track;
 
 public class JsonTrack {
 

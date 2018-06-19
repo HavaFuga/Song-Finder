@@ -32,9 +32,9 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
             tracks =  musixMatch.searchTracksByLyrics(strings[0], true);
         } catch (MusixMatchException e) {
             e.printStackTrace();
-        }      for (Track track : tracks) {
+        }
 
-
+        for (Track track : tracks) {
             int trackId = track.getTrack().getTrackId();
             String trackName = track.getTrack().getTrackName();
             String artistName = track.getTrack().getArtistName();
@@ -46,7 +46,6 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
                 e.printStackTrace();
             }
             TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics);
-            //List<TrackObject> foundTracks =  new List<TrackObject>;
             List<TrackObject> foundTracks = new List<TrackObject>();
             foundTracks.add(currentTrack);
         }

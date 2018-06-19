@@ -70,6 +70,22 @@ public class ListActivity extends AppCompatActivity {
         sil.execute(someTrackLyrics);
         lvSearch.setAdapter(arrayAdapter);
 
+<<<<<<< HEAD
+=======
+
+        //Add to Favorites
+        /*item heart = findViewById(R.id.heart_fav);
+        heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FavoritTrack ft = new FavoritTrack();
+                ft.addTrackToFavorites(getTrackID);
+            }
+
+
+        });*/
+
+>>>>>>> 8b58b5418e480aba9d111616962c90d83ea3e328
     }
 
 

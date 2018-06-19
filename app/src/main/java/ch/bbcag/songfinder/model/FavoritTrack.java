@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+package ch.bbcag.songfinder.model;
+
 import java.util.List;
 
 import ch.bbcag.songfinder.model.TrackObject;
@@ -39,10 +40,10 @@ import ch.bbcag.songfinder.model.TrackObject;
 //        favorit_tracks.setAdapter( listAdapter );*/
 //    }
 //}*/
-=======
 
-package ch.bbcag.songfinder.model;
->>>>>>> 2dcd0e21a8b5ea7cf65e9ddc9950e98e21b7b77e
+
+
+
 
         package ch.bbcag.songfinder.model;
 

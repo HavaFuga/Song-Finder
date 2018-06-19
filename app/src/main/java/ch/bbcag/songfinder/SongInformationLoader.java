@@ -6,25 +6,27 @@ import org.jmusixmatch.MusixMatchException;
 import org.jmusixmatch.entity.track.Track;
 import org.jmusixmatch.entity.track.TrackData;
 
-public class SongInformationLoader extends AsyncTask<String, Integer, Track> {
+import java.util.List;
+
+public class SongInformationLoader extends AsyncTask<String, Integer, List<Track>> {
 
     @Override
-    protected Track doInBackground(String... strings) {
+    public List<Track> doInBackground(String... strings) {
         String apiKey = "55615c98103f6c50e31c0904312eeafa";
         MusixMatch musixMatch = new MusixMatch(apiKey);
 
-        Track track = null;
+        List<Track> tracks = null;
 
         try {
-            track = (Track) musixMatch.(strings[0], "Eminem", "Lose yourself", 0, 0,true);
+            tracks = (List<Track>) musixMatch.searchTracksByLyrics(strings[0],true);
         } catch (MusixMatchException e) {
             e.printStackTrace();
         }
-        return track;
+        return tracks;
     }
 
     @Override
-    protected void onPostExecute(Track track) {
+    protected void onPostExecute(List<Track> track) {
         TrackData data = track.getTrack();
 
         System.out.println("AlbumID : "    + data.getAlbumId());

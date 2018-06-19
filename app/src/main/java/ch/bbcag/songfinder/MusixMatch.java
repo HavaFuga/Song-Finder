@@ -42,18 +42,52 @@ public class MusixMatch {
      * @throws MusixMatchException
      *             if any error occur
      */
-    public List<Track> searchTracksByLyrics(String q){
-        List<Track> tracks = null;
+    public List<Track> searchTracksByLyrics(String q, boolean f_has_lyrics) throws MusixMatchException {
+        List<Track> trackList = null;
+
+        Map<String, Object> params = new HashMap<String, Object>();
 
         params.put(Constants.API_KEY, apiKey);
-        params.put(Constants.TRACK_ID, new String("" + trackID));
-        params.put(Constants.QUERY, q);
+        params.put(Constants.QUERY, new String("" + q));
+
+        if (f_has_lyrics) {
+            params.put(Constants.F_HAS_LYRICS, "1");
+        } else {
+            params.put(Constants.F_HAS_LYRICS, "0");
+        }
+/*
+        try {
+            trackList = (List<Track>) getTrackResponse(Methods.TRACK_GET, params);
+        } catch (MusixMatchException e) {
+            e.printStackTrace();
+        }
+
+        return (List<Track>) trackList;*/
+
+        String response = null;
+        Gson gson = new Gson();
+        TrackSeachMessage message = null;
+
+        response = MusixMatchRequest.sendRequest(Helper.getURLString(
+                Methods.TRACK_SEARCH, params));
+
+        try {
+            message = gson.fromJson(response, TrackSeachMessage.class);
+        } catch (JsonParseException jpe) {
+            handleErrorResponse(response);
+        }
+
+        int statusCode = message.getTrackMessage().getHeader().getStatusCode();
+
+        if (statusCode > 200) {
+            throw new MusixMatchException("Status Code is not 200");
+        }
+
+        trackList = message.getTrackMessage().getBody().getTrack_list();
+
+        return trackList;
 
 
-        track = getTrackResponse(Methods.TRACK_GET, params);
-
-
-        return tracks;
 
     }
     /**

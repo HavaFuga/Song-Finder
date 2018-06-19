@@ -7,6 +7,7 @@ import org.jmusixmatch.MusixMatchException;
 import org.jmusixmatch.entity.lyrics.Lyrics;
 import org.jmusixmatch.entity.track.Track;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ch.bbcag.songfinder.model.TrackObject;
@@ -46,7 +47,7 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
                 e.printStackTrace();
             }
             TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics);
-            List<TrackObject> foundTracks = new List<TrackObject>();
+            List<TrackObject> foundTracks = new ArrayList<TrackObject>();
             foundTracks.add(currentTrack);
         }
 

@@ -50,8 +50,6 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
             List<TrackObject> foundTracks = new ArrayList<TrackObject>();
             foundTracks.add(currentTrack);
         }
-
-
         return tracks;
     }
 

@@ -4,7 +4,6 @@ import android.os.AsyncTask;
 
 import org.jmusixmatch.MusixMatchException;
 import org.jmusixmatch.entity.track.Track;
-import org.jmusixmatch.entity.track.TrackData;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
         List<Track> tracks = null;
 
         try {
-            tracks = (List<Track>) musixMatch.searchTracksByLyrics(strings[0],true);
+            tracks = (List<Track>) musixMatch.searchTracksByLyrics(strings[0], true);
         } catch (MusixMatchException e) {
             e.printStackTrace();
         }
@@ -27,12 +26,12 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
 
     @Override
     protected void onPostExecute(List<Track> track) {
-        TrackData data = track.getTrack();
+        // TrackData data = track.getTrack();
 
-        System.out.println("AlbumID : "    + data.getAlbumId());
-        System.out.println("Album Name : " + data.getAlbumName());
-        System.out.println("Artist ID : "  + data.getArtistId());
-        System.out.println("Album Name : " + data.getArtistName());
-        System.out.println("Track ID : "   + data.getTrackId());
+        // System.out.println("AlbumID : "    + data.getAlbumId());
+        //System.out.println("Album Name : " + data.getAlbumName());
+        // System.out.println("Artist ID : "  + data.getArtistId());
+        // System.out.println("Album Name : " + data.getArtistName());
+        //System.out.println("Track ID : "   + data.getTrackId());
     }
 }

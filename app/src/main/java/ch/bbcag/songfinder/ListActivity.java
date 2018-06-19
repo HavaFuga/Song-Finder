@@ -3,7 +3,6 @@ package ch.bbcag.songfinder;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 import org.jmusixmatch.MusixMatchException;
 import org.jmusixmatch.entity.track.Track;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
@@ -61,12 +59,15 @@ public class ListActivity extends AppCompatActivity {
         SongInformationLoader sil = new SongInformationLoader();
 
         List<Track> tracks = (List<Track>) sil.execute(someTrackLyrics);
+
+        ListView lvSearch = findViewById(R.id.lv_search);
+        ArrayAdapter<Track> trackArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1);
+      //  for(Track track : tracks) {
+        //    track.
+        //}
     }
 
-    ListView tracks = findViewById(R.id.lv_search);
-    ArrayAdapter<Track> trackArrayAdapter =
-            new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1);
-    for(String track : tracks){
+
         
-    }
+
 }

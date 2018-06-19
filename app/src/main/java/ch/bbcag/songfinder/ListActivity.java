@@ -70,8 +70,7 @@ public class ListActivity extends AppCompatActivity {
         sil.execute(someTrackLyrics);
         lvSearch.setAdapter(arrayAdapter);
 
-<<<<<<< HEAD
-=======
+
 
         //Add to Favorites
         /*item heart = findViewById(R.id.heart_fav);
@@ -85,7 +84,7 @@ public class ListActivity extends AppCompatActivity {
 
         });*/
 
->>>>>>> 8b58b5418e480aba9d111616962c90d83ea3e328
+
     }
 
 

@@ -31,14 +31,14 @@ import java.util.Map;
 public class MusixMatch {
 
     /**
-     * Search tracks using the given criteria.
+     * Search trackList using the given criteria.
      *
      * @param q
      *            search into every available field
      *            (track_name,artist_name,lyrics)
      * @param f_has_lyrics
      *            specify number of items per result page
-     * @return a ListActivity of tracks.
+     * @return a ListActivity of trackList.
      * @throws MusixMatchException
      *             if any error occur
      */
@@ -201,7 +201,7 @@ public class MusixMatch {
     }
 
     /**
-     * Search tracks using the given criteria.
+     * Search trackList using the given criteria.
      *
      * @param q
      *            search into every available field
@@ -216,7 +216,7 @@ public class MusixMatch {
      *            specify number of items per result page
      * @param f_has_lyrics
      *            specify number of items per result page
-     * @return a ListActivity of tracks.
+     * @return a ListActivity of trackList.
      * @throws MusixMatchException
      *             if any error occur
      */

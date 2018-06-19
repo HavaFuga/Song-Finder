@@ -13,26 +13,11 @@ public class TrackObject {
         this.trackName = trackName;
         this.artistName = artistName;
         this.trackLyrics = trackLyrics;
-    }
+    }}
 
     /*@Override
     public String toString() {
         return name;
     }*/
 
-    //Setter
-    public void setId(int id) {
-        this.trackId = id;
-    }
-    public void setName(String name) {
-        this.trackName = name;
-    }
 
-    //Getter
-    public int getId() {
-        return trackId;
-    }
-    public String getName() {
-        return trackName;
-    }
-}

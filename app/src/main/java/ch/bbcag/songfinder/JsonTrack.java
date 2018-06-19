@@ -15,8 +15,8 @@ public class JsonTrack {
         String trackName = jsonObj.getString("trackName");
         String artistName = jsonObj.getString("artistName");
         String trackLyrics = jsonObj.getString("trackLyrics");
-        Track track = new Track(trackId, trackName, artistName, trackLyrics);
-        return track;
+        Track tracky = new Track(trackId, trackName, artistName, trackLyrics);
+        return tracky;
     }
 
 }

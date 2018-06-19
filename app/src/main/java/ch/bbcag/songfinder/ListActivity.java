@@ -94,6 +94,18 @@ public class ListActivity extends AppCompatActivity {
         lvSearch.setAdapter(arrayAdapter);
 
 
+        //Add to Favorites
+        /*item heart = findViewById(R.id.heart_fav);
+        heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FavoritTrack ft = new FavoritTrack();
+                ft.addTrackToFavorites(getTrackID);
+            }
+
+
+        });*/
+
     }
 
 

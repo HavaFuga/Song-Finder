@@ -1,29 +1,24 @@
 package ch.bbcag.songfinder.model;
 
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
 import java.util.List;
 
-import ch.bbcag.songfinder.R;
-
 public class FavoritTrack {
-    List<Track> favorites = null;
-    public void addTrackToFavorites(Track track){
+    List<TrackObject> favorites = null;
+    public void addTrackToFavorites(TrackObject track){
         favorites.add(track);
     }
 
-    public List<Track> getFavorites() {
+    public List<TrackObject> getFavorites() {
         return favorites;
     }
 
-    public void fillListView(List<Track> favorites){
-        ListView favorit_tracks = findfViewById(R.id.favorit_tracks);
+    public void fillListView(List<TrackObject> favorites){
+        /*ListView listView_ft = findfViewById(R.id.favorit_tracks);
 
         ArrayAdapter<String> listAdapter;
-        listAdapter = new ArrayAdapter<Track>(this, R.layout.activity_favorits, favorites);
+        listAdapter = new ArrayAdapter<TrackObject>(this, R.layout.activity_favorits, favorites);
 
         // Assign adapter to ListView
-        favorit_tracks.setAdapter( listAdapter );
+        favorit_tracks.setAdapter( listAdapter );*/
     }
 }

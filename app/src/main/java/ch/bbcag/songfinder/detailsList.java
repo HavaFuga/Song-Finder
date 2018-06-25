@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.jmusixmatch.entity.lyrics.Lyrics;
 
@@ -16,14 +17,18 @@ public class detailsList extends AppCompatActivity {
 
     ListView listView;
     ArrayAdapter adapter;
-
+    TextView tvArtist;
+    TextView tvLyrics;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_list);
 
+        tvArtist = (TextView)findViewById(R.id.tvArtist);
+        tvLyrics  = (TextView)findViewById(R.id.tvLyrics);
+
         listView = (ListView) findViewById(R.id.lv_search);
-        adapter = (ArrayAdapter) listView.getAdapter();
+      //  adapter = (ArrayAdapter) listView.getAdapter();
 
         int trackId = getIntent().getExtras().getInt("trackId");
         String trackName = getIntent().getExtras().getString("trackName");
@@ -38,8 +43,10 @@ public class detailsList extends AppCompatActivity {
       TrackObject currTrack=  makeTrack(trackId, trackName, artistName, lyrics);
         // String artistName = getTitle(trackId);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(artistName);
+        actionBar.setTitle(trackName);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
+        tvArtist.setText(artistName);
+        tvLyrics.setText(currTrack.getTrackLyrics().getLyricsBody());
     }
 
     public Lyrics makeLyrics(String lyricsBody, String lyricsCopy, int lyricsId, String lyricsLang, String pixel, String script) {
@@ -57,6 +64,7 @@ lyrics.setScriptTrackingURL(script);
         TrackObject currTrack = new TrackObject(trackId, trackName, artistName, lyrics, false);
         return currTrack;
     }
+
 
 
 }

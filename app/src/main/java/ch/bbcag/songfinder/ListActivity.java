@@ -32,9 +32,9 @@ public class ListActivity extends AppCompatActivity {
         aBlist.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
         aBlist.setTitle("Vorschläge");
         // TextView tv = (TextView) findViewById(R.id.textView2);
-
+        String someTrackLyrics = getIntent().getExtras().getString("typedText");
         try {
-            this.fill();
+            this.fill(someTrackLyrics);
         } catch (MusixMatchException e) {
             e.printStackTrace();
         }
@@ -60,8 +60,9 @@ public class ListActivity extends AppCompatActivity {
         });
     }
 
-    public void fill() throws MusixMatchException {
-        String someTrackLyrics = "mom's spaghetti";
+    public void fill(String someTrackLyrics) throws MusixMatchException {
+    //    String someTrackLyrics = "mom's spaghetti";
+
         List<TrackObject> trackObjects = new ArrayList<>();
 
         // MusixMatch mm = new MusixMatch(api);

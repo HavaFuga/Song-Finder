@@ -7,12 +7,14 @@ public class TrackObject {
     String trackName;
     String artistName;
     Lyrics trackLyrics;
+    Boolean isFavorit;
 
-    public TrackObject(int trackId, String trackName, String artistName, Lyrics trackLyrics){
+    public TrackObject(int trackId, String trackName, String artistName, Lyrics trackLyrics, Boolean isFavorit){
         this.trackId = trackId;
         this.trackName = trackName;
         this.artistName = artistName;
         this.trackLyrics = trackLyrics;
+        this.isFavorit = isFavorit;
     }
 
     @Override

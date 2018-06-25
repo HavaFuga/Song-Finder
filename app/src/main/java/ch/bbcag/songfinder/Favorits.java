@@ -41,9 +41,6 @@ public class Favorits extends AppCompatActivity {
                 startActivity(new Intent(Favorits.this, Favorits.class));
             }
         });
-
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.loading_track_details_progress);
-        progressBar.getIndeterminateDrawable().setColorFilter(0xFF9A0000, android.graphics.PorterDuff.Mode.MULTIPLY);
     }
 
 

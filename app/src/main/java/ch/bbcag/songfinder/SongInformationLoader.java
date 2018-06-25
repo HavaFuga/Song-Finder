@@ -48,7 +48,7 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
             } catch (MusixMatchException e) {
                 e.printStackTrace();
             }
-            TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics);
+            TrackObject currentTrack = new TrackObject(trackId, trackName, artistName, lyrics, false);
             foundTracks.add(currentTrack);
         }
 

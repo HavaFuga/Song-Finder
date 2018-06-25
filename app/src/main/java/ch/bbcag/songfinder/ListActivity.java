@@ -23,15 +23,34 @@ import ch.bbcag.songfinder.model.TrackObject;
 
 public class ListActivity extends AppCompatActivity {
     String api = "55615c98103f6c50e31c0904312eeafa";
+    List<String> names = new ArrayList<String>();
+    List<String> artists = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_favorits);
         ActionBar aBlist = getSupportActionBar();
         aBlist.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
         aBlist.setTitle("Vorschläge");
        // TextView tv = (TextView) findViewById(R.id.textView2);
+
+
+
+        /*List<TrackObject> foundTracks = getInfos();
+        //GEt names
+        for (TrackObject track : foundTracks){
+            String name = track.getTrackName();
+            String artist = track.getArtistName();
+
+            this.names.add(name);
+            this.artists.add(artist);
+        }*/
+
+        ListView list;
+        CustomListAdapter adapter=new CustomListAdapter(this, names, artists);
+        list=(ListView)findViewById(R.id.list);
+        list.setAdapter(adapter);
 
         try {
             this.fill();
@@ -58,8 +77,17 @@ public class ListActivity extends AppCompatActivity {
                 startActivity(new Intent(ListActivity.this, Favorits.class));
             }
         });
+
     }
 
+    public List<TrackObject> getInfos(){
+        List<TrackObject> trackObjects = new ArrayList<>();
+        String someTrackLyrics = "mom's spaghetti";
+        ArrayAdapter<TrackObject> arrayAdapter = new ArrayAdapter<TrackObject>(this, android.R.layout.simple_list_item_1, trackObjects);
+        SongInformationLoader sil = new SongInformationLoader(arrayAdapter);
+        List<TrackObject> foundTracks = (List<TrackObject>) sil.execute(someTrackLyrics);
+        return foundTracks;
+    }
     public void fill() throws MusixMatchException {
         String someTrackLyrics = "mom's spaghetti";
         List<TrackObject> trackObjects = new ArrayList<>();
@@ -68,8 +96,9 @@ public class ListActivity extends AppCompatActivity {
         ListView lvSearch = findViewById(R.id.lv_search);
         ArrayAdapter<TrackObject> arrayAdapter = new ArrayAdapter<TrackObject>(this, android.R.layout.simple_list_item_1, trackObjects);
         SongInformationLoader sil = new SongInformationLoader(arrayAdapter);
-        sil.execute(someTrackLyrics);
+        List<TrackObject> foundTracks = (List<TrackObject>) sil.execute(someTrackLyrics);
         lvSearch.setAdapter(arrayAdapter);
+
 
         AdapterView.OnItemClickListener mListClickedHandler = new AdapterView.OnItemClickListener(){
 

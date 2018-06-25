@@ -54,7 +54,7 @@ lyrics.setScriptTrackingURL(script);
     }
 
     public TrackObject makeTrack(int trackId, String trackName, String artistName, Lyrics lyrics) {
-        TrackObject currTrack = new TrackObject(trackId, trackName, artistName, lyrics);
+        TrackObject currTrack = new TrackObject(trackId, trackName, artistName, lyrics, false);
         return currTrack;
     }
 

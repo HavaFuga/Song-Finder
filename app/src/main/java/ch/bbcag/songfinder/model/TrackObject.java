@@ -19,6 +19,20 @@ public class TrackObject {
     public String toString() {
         return this.trackName + "\n" + this.artistName;
     }
+
+
+    public int getTrackId(){
+        return this.trackId;
+    }
+    public String getTrackName(){
+        return this.trackName;
+    }
+    public String getArtistName(){
+        return this.artistName;
+    }
+    public Lyrics getTrackLyrics(){
+        return this.trackLyrics;
+    }
 }
 
 

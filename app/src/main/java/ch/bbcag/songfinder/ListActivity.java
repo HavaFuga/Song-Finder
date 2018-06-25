@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -69,6 +70,29 @@ public class ListActivity extends AppCompatActivity {
         SongInformationLoader sil = new SongInformationLoader(arrayAdapter);
         sil.execute(someTrackLyrics);
         lvSearch.setAdapter(arrayAdapter);
+
+        AdapterView.OnItemClickListener mListClickedHandler = new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), detailsList.class);
+                TrackObject selected = (TrackObject)parent.getItemAtPosition(position);
+                intent.putExtra("trackId", selected.getTrackId());
+                intent.putExtra("trackName", selected.getTrackName());
+                intent.putExtra("artistName", selected.getArtistName());
+                intent.putExtra("lyrics_body", selected.getTrackLyrics().getLyricsBody());
+                intent.putExtra("lyrics_copyright", selected.getTrackLyrics().getLyricsCopyright());
+                intent.putExtra("lyrics_id", selected.getTrackLyrics().getLyricsId());
+                intent.putExtra("lyrics_language", selected.getTrackLyrics().getLyricsLang());
+                intent.putExtra("pixel_tracking_url", selected.getTrackLyrics().getPixelTrackingURL());
+                intent.putExtra("script_tracking_url", selected.getTrackLyrics().getScriptTrackingURL());
+          //      intent.putExtra("trackName", selected.getTrackName());
+          //      intent.putExtra("artistName", selected.getArtistName());
+
+                startActivity(intent);
+            }
+        };
+        lvSearch.setOnItemClickListener(mListClickedHandler);
 
 
 

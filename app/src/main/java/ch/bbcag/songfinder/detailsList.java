@@ -43,12 +43,17 @@ public class detailsList extends AppCompatActivity {
     }
 
     public Lyrics makeLyrics(String lyricsBody, String lyricsCopy, int lyricsId, String lyricsLang, String pixel, String script) {
-        Lyrics lyrics = new Lyrics(lyricsBody, lyricsCopy, lyricsId, lyricsLang, pixel, script);
-
+        Lyrics lyrics = new Lyrics();
+        lyrics.setLyricsBody(lyricsBody);
+        lyrics.setLyricsCopyright(lyricsCopy);
+lyrics.setLyricsId(lyricsId);
+lyrics.setLyricsLang(lyricsLang);
+lyrics.setPixelTrackingURL(pixel);
+lyrics.setScriptTrackingURL(script);
         return lyrics;
     }
 
-    public TrackObject makeTrack(int trackId, String trackName, String artistName, String lyrics) {
+    public TrackObject makeTrack(int trackId, String trackName, String artistName, Lyrics lyrics) {
         TrackObject currTrack = new TrackObject(trackId, trackName, artistName, lyrics);
         return currTrack;
     }

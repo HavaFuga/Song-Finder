@@ -17,12 +17,7 @@ public class TrackObject {
 
     @Override
     public String toString() {
-        return "TrackObject{" +
-                "trackId=" + trackId +
-                ", trackName='" + trackName + '\'' +
-                ", artistName='" + artistName + '\'' +
-                ", trackLyrics=" + trackLyrics +
-                '}';
+        return this.trackName + "\n" + this.artistName;
     }
 }
 

@@ -17,6 +17,8 @@ public class TrackObject {
         this.isFavorit = isFavorit;
     }
 
+
+
     @Override
     public String toString() {
         return this.trackName + "\n" + this.artistName;
@@ -35,6 +37,7 @@ public class TrackObject {
     public Lyrics getTrackLyrics(){
         return this.trackLyrics;
     }
+    public Boolean getFavorit() { return isFavorit; }
 }
 
 

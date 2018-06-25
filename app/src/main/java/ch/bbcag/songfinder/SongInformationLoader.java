@@ -13,7 +13,7 @@ import java.util.List;
 import ch.bbcag.songfinder.model.TrackObject;
 
 
-public class SongInformationLoader extends AsyncTask<String, Integer, List<Track>> {
+public class SongInformationLoader extends AsyncTask<String, Integer, List<TrackObject>> {
     ArrayAdapter<TrackObject> arrayAdapter;
     String api = "55615c98103f6c50e31c0904312eeafa";
     MusixMatch mm = new MusixMatch(api);
@@ -23,10 +23,10 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
         this.arrayAdapter = arrayAdapter;
     }
     @Override
-    public List<Track> doInBackground(String... strings) {
+    public List<TrackObject> doInBackground(String... strings) {
         String apiKey = "55615c98103f6c50e31c0904312eeafa";
         MusixMatch musixMatch = new MusixMatch(apiKey);
-        ArrayList<TrackObject> foundTracks = new ArrayList<TrackObject>();
+        List<TrackObject> foundTracks = new ArrayList<TrackObject>();
 
         List<Track> tracks = new ArrayList<>();
 
@@ -51,14 +51,15 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
             foundTracks.add(currentTrack);
         }
 
-        return tracks;
+        return foundTracks;
+
     }
 
     @Override
-    protected void onPostExecute(List<Track> foundTracks) {
+    protected void onPostExecute(List<TrackObject> foundTracks) {
         MusixMatch mm = new MusixMatch(api);
 
-        arrayAdapter.add((TrackObject) foundTracks);
+        arrayAdapter.addAll(foundTracks);
         arrayAdapter.notifyDataSetChanged();
     }
 }

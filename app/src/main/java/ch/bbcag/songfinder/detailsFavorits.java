@@ -15,7 +15,7 @@ public class detailsFavorits extends AppCompatActivity {
         
         String artistName;
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(artistName);
+        //actionBar.setTitle(artistName);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#32353A")));
     }
 }

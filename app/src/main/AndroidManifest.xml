@@ -29,7 +29,7 @@
             android:parentActivityName=".ListActivity" />
         <activity
             android:name=".detailsFavorits"
-            android:parentActivityName=".Favorits" />
+            android:parentActivityName=".ListActivity" />
     </application>
 
 </manifest>

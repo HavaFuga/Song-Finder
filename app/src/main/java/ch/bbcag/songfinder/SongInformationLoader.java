@@ -44,6 +44,7 @@ public class SongInformationLoader extends AsyncTask<String, Integer, List<Track
             Lyrics lyrics = null;
             try {
                 lyrics = mm.getLyrics(trackId);
+
             } catch (MusixMatchException e) {
                 e.printStackTrace();
             }
